@@ -1,0 +1,51 @@
+// 公共变量
+$headerH: 50px; // 头部高度
+$sideBarWidth: 200px; // 导航打开宽度
+$sideBarWidth_hide: 54px; // 导航收起宽度
+$sideBarBg:rgb(14, 41, 69);
+
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+
+// sidebar
+$menuText:#bfcbd9;
+$menuActiveText:#409EFF;
+$subMenuActiveText:#f4f4f5;
+
+$menuBg:#304156;
+$menuHover:#263445;
+$sidebarTitle: #ffffff;
+
+$menuLightBg:#ffffff;
+$menuLightHover:#f0f1f5;
+$sidebarLightTitle: #001529;
+
+$subMenuBg:#1f2d3d;
+$subMenuHover:#001528;
+
+$sideBarWidth: 200px;
+
+:export {
+    headerH: $headerH;
+    sideBarWidth: $sideBarWidth;
+    sideBarWidth_hide: $sideBarWidth_hide;
+    sideBarBg: $sideBarBg;
+    menuText: $menuText;
+    menuActiveText: $menuActiveText;
+    subMenuActiveText: $subMenuActiveText;
+    menuBg: $menuBg;
+    menuHover: $menuHover;
+    menuLightBg: $menuLightBg;
+    menuLightHover: $menuLightHover;
+    subMenuBg: $subMenuBg;
+    subMenuHover: $subMenuHover;
+    sideBarWidth: $sideBarWidth;
+    sidebarTitle: $sidebarTitle;
+    sidebarLightTitle: $sidebarLightTitle
+}
