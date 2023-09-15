@@ -70,10 +70,10 @@ export default new Router({
       meta: { title: "ELEMENT", icon: "slider", noCache: false },
       children: [
         {
-          path: '/selectPage',
-          name: 'selectPage',
-          component: resolve => require(['@/views/elementUI/selectPage'], resolve),
-          meta: { title: 'ELSELECT', icon: 'dashboard', noCache: true}
+          path: '/formSelectPage',
+          name: 'formSelectPage',
+          component: resolve => require(['@/views/elementUI/formSelectPage'], resolve),
+          meta: { title: 'formSelectPage', icon: 'dashboard', noCache: true}
         },
         {
           path: '/inputPage',
