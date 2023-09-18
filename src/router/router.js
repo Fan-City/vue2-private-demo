@@ -23,29 +23,42 @@ export default new Router({
       ]
     },
     {
+      path: '/svgPage',
+      component: Layout,
+      redirect: "svgPage",
+      children: [
+        {
+          path: 'svgPage',
+          component: resolve => require(['@/views/svgPage/index'], resolve),
+          name: 'svgPage',
+          meta: { title: 'SVG库', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
       path: '/echarts',
       component: Layout,
       redirect: "noRedirect",
       alwaysShow: true,
-      meta: { title: "Echarts", icon: "slider", noCache: false },
+      meta: { title: "Echarts", icon: "chart", noCache: false },
       children: [
         {
           path: '/echartsBar',
           component: resolve => require(['@/views/echarts/echartsBar'], resolve),
           name: '柱状体',
-          meta: { title: '柱状体', icon: 'dashboard', noCache: true}
+          meta: { title: '柱状体', icon: 'chart', noCache: true}
         },
         {
           path: '/echartsLine',
           component: resolve => require(['@/views/echarts/echartsLine'], resolve),
           name: '折线图',
-          meta: { title: '折线图', icon: 'dashboard', noCache: true}
+          meta: { title: '折线图', icon: 'chart', noCache: true}
         },
         {
           path: '/echartsMap',
           component: resolve => require(['@/views/echarts/echartsMap/index'], resolve),
           name: '地图',
-          meta: { title: '地图', icon: 'dashboard', noCache: true}
+          meta: { title: '地图', icon: 'chart', noCache: true}
         }
       ]
     },
@@ -58,7 +71,7 @@ export default new Router({
           path: 'threeEarth3D',
           component: resolve => require(['@/views/earth3D/index'], resolve),
           name: 'threeEarth3D',
-          meta: { title: '地球', icon: 'dashboard', noCache: true}
+          meta: { title: '地球', icon: 'international', noCache: true}
         }
       ]
     },
@@ -67,19 +80,45 @@ export default new Router({
       component: Layout,
       redirect: "inputPage",
       alwaysShow: true,
-      meta: { title: "ELEMENT", icon: "slider", noCache: false },
+      meta: { title: "ELEMENT", icon: "edit", noCache: false },
       children: [
         {
           path: '/formSelectPage',
           name: 'formSelectPage',
           component: resolve => require(['@/views/elementUI/formSelectPage'], resolve),
-          meta: { title: 'formSelectPage', icon: 'dashboard', noCache: true}
+          meta: { title: 'formSelectPage', icon: 'edit', noCache: true}
         },
         {
           path: '/inputPage',
           name: 'inputPage',
           component: resolve => require(['@/views/elementUI/inputPage'], resolve),
-          meta: { title: 'ELINPUT', icon: 'dashboard', noCache: true}
+          meta: { title: 'ELINPUT', icon: 'edit', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/lyricsScrolling',
+      component: Layout,
+      redirect: "lyricsScrolling",
+      children: [
+        {
+          path: 'lyricsScrolling',
+          component: resolve => require(['@/views/lyricsScrolling/index'], resolve),
+          name: 'lyricsScrolling',
+          meta: { title: '歌词滚动', icon: 'documentation', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/honeycomb',
+      component: Layout,
+      redirect: "honeycomb",
+      children: [
+        {
+          path: 'honeycomb',
+          component: resolve => require(['@/views/honeycomb/index'], resolve),
+          name: 'honeycomb',
+          meta: { title: '横向蜂窝图', icon: 'honeycomb', noCache: true}
         }
       ]
     },

@@ -1,11 +1,11 @@
 <template>
-<section class="app-main">
+<div class="app-main">
   <transition name="fade-transform" mode="out-in">
     <template class="main-content">
       <router-view :key="key" />
     </template>
   </transition>
-</section>
+</div>
 </template>
 
 <script>
@@ -29,6 +29,8 @@ $menuW: 180px;
   margin-top: #{$headerH};
   border: 1px solid #fff;
   padding: 8px;
+  height: calc(100% - 64px);
+  overflow-y: auto;
   .main-content{
     padding: 8px;
     overflow-y: auto;
