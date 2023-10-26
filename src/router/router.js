@@ -123,6 +123,26 @@ export default new Router({
       ]
     },
     {
+      path: '/down',
+      component: Layout,
+      redirect: "down",
+      meta: { title: "ELEMENT", icon: "documentation", noCache: false },
+      children: [
+        {
+          path: 'downword',
+          component: resolve => require(['@/views/downWord/index'], resolve),
+          name: 'downword',
+          meta: { title: '下载WORD', icon: 'documentation', noCache: true}
+        }, 
+        {
+          path: 'downloadEditer',
+          component: resolve => require(['@/views/downWord/downloadEditer'], resolve),
+          name: 'downloadEditer',
+          meta: { title: '下载富文本', icon: 'documentation', noCache: true}
+        }
+      ]
+    },
+    {
       path: '*',
       name: '404',
       component: noPage,
