@@ -4,11 +4,14 @@
     :options="options"
     filterable
     clearable
+    append
+    popper-class="aaaaaaaa"
   >
     <template slot-scope="{ data }">
-      <span>
-        {{data.label}} &nbsp; <svg-icon :icon-class="'build'" />
-      </span>
+      <div style="display: flex;">
+        <span style="flex: 1;margin-right: 5px;">{{data.label}}</span>
+        <span><svg-icon :icon-class="'build'" /></span>
+      </div>
     </template>
   </el-cascader>
 </template>
@@ -24,7 +27,7 @@ export default {
           children: [
             {
               value: "shejiyuanze",
-              label: "设计原则",
+              label: "设计原则设计原则设计原则设计原则",
               children: [
                 {
                   value: "yizhi",
@@ -289,3 +292,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.aaaaaaaa {
+  .el-cascader-node__label{
+    // padding: 0 !important;
+  }
+}
+</style>

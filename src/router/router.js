@@ -55,6 +55,12 @@ export default new Router({
           meta: { title: '折线图', icon: 'chart', noCache: true}
         },
         {
+          path: '/echartsPie',
+          component: resolve => require(['@/views/echarts/pie'], resolve),
+          name: '饼图',
+          meta: { title: '饼图', icon: 'chart', noCache: true}
+        },
+        {
           path: '/echartsMap',
           component: resolve => require(['@/views/echarts/echartsMap/index'], resolve),
           name: '地图',
