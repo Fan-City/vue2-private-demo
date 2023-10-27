@@ -93,6 +93,12 @@ export default new Router({
           name: 'inputPage',
           component: resolve => require(['@/views/elementUI/inputPage'], resolve),
           meta: { title: 'ELINPUT', icon: 'edit', noCache: true}
+        },
+        {
+          path: '/cascader',
+          name: 'cascader',
+          component: resolve => require(['@/views/elementUI/cascader'], resolve),
+          meta: { title: 'cascader', icon: 'edit', noCache: true}
         }
       ]
     },

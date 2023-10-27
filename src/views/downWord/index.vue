@@ -1,7 +1,6 @@
 <template>
   <div class="downword-page">
     <div class="download" @click="todown">下载</div>
-    <div class="download1" @click="todown2">下载2</div>
     <div class="title title-1">{{ text1 }}</div>
     <div class="title title-2">{{ text2 }}</div>
 
@@ -17,7 +16,6 @@ import docxtemplater from "docxtemplater";
 import { saveAs } from "file-saver";
 import PizZip from "pizzip";
 
-import docx from "html-docx-js";
 export default {
   name: "downwords",
   data() {
@@ -805,15 +803,6 @@ export default {
         bytes[i] = ascii;
       }
       return bytes.buffer;
-    },
-    todown2() {
-      const htmlContent = document.querySelector(".downword-page"); // 替换成你需要转换的网页内容
-      const converted = docx.asBlob(htmlContent);
-
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(converted);
-      link.download = "converted.docx";
-      link.click();
     },
   },
 };
