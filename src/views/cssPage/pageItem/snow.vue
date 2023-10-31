@@ -55,6 +55,7 @@ $wh: 30px;
                 border-radius: 50%;
                 animation: snowing 5s linear infinite;
                 animation-duration: calc(15s / var(--i));
+                filter: blur(1px);
             }
             @keyframes snowing {
                 0% {

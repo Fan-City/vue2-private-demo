@@ -159,6 +159,32 @@ export default new Router({
       name: '404',
       component: noPage,
       hidden: true
+    },
+    {
+      path: '/eventLoop',
+      component: Layout,
+      redirect: "eventLoop",
+      children: [
+        {
+          path: 'eventLoop',
+          component: resolve => require(['@/views/eventLoop/index'], resolve),
+          name: 'eventLoop',
+          meta: { title: '多次点击', icon: 'button', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/formRecovery',
+      component: Layout,
+      redirect: "formRecovery",
+      children: [
+        {
+          path: 'formRecovery',
+          component: resolve => require(['@/views/formRecovery/index'], resolve),
+          name: 'formRecovery',
+          meta: { title: '模拟表单垃圾回收', icon: 'input', noCache: true}
+        }
+      ]
     }
   ]
 })
