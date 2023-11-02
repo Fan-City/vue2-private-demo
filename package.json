@@ -20,10 +20,12 @@
     "js-cookie": "^3.0.5",
     "jszip-utils": "^0.1.0",
     "pizzip": "^3.1.4",
+    "sortablejs": "^1.15.0",
     "three": "0.106.2",
     "three-obj-mtl-loader": "1.0.3",
     "tween.js": "16.6.0",
     "vue": "^2.6.10",
+    "vue-drag-tree-table": "^1.0.4",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"

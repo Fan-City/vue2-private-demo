@@ -61,6 +61,18 @@ export default new Router({
           meta: { title: '饼图', icon: 'chart', noCache: true}
         },
         {
+          path: '/echartsTree',
+          component: resolve => require(['@/views/echarts/shuxing'], resolve),
+          name: 'shuxing',
+          meta: { title: '树形图', icon: 'chart', noCache: true}
+        },
+        {
+          path: '/echartsPraph',
+          component: resolve => require(['@/views/echarts/guanxi'], resolve),
+          name: 'guanxi',
+          meta: { title: '关系图', icon: 'chart', noCache: true}
+        },
+        {
           path: '/echartsMap',
           component: resolve => require(['@/views/echarts/echartsMap/index'], resolve),
           name: '地图',
@@ -82,9 +94,9 @@ export default new Router({
       ]
     },
     {
-      path: '/inputPage',
+      path: '/elPage',
       component: Layout,
-      redirect: "inputPage",
+      redirect: "elPage",
       alwaysShow: true,
       meta: { title: "ELEMENT", icon: "edit", noCache: false },
       children: [
@@ -105,6 +117,18 @@ export default new Router({
           name: 'cascader',
           component: resolve => require(['@/views/elementUI/cascader'], resolve),
           meta: { title: 'cascader', icon: 'edit', noCache: true}
+        },
+        {
+          path: '/buildTable',
+          name: 'buildTable',
+          component: resolve => require(['@/views/elementUI/elTable/bulidTable'], resolve),
+          meta: { title: 'buildTable', icon: 'build', noCache: true}
+        },
+        {
+          path: '/treeTableBySortablejs',
+          name: 'treeTableBySortablejs',
+          component: resolve => require(['@/views/elementUI/elTable/treeTableBySortablejs'], resolve),
+          meta: { title: 'treeTableBySortablejs', icon: 'build', noCache: true}
         }
       ]
     },
@@ -155,12 +179,6 @@ export default new Router({
       ]
     },
     {
-      path: '*',
-      name: '404',
-      component: noPage,
-      hidden: true
-    },
-    {
       path: '/eventLoop',
       component: Layout,
       redirect: "eventLoop",
@@ -185,6 +203,12 @@ export default new Router({
           meta: { title: '模拟表单垃圾回收', icon: 'input', noCache: true}
         }
       ]
+    },
+    {
+      path: '*',
+      name: '404',
+      component: noPage,
+      hidden: true
     }
   ]
 })
