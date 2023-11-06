@@ -928,8 +928,8 @@ export default class Earth3D {
   onWindowResize() {
     this.camera.aspect = this.width / this.height
     this.camera.updateProjectionMatrix()
-    this.renders()
     this.renderer.setSize(this.width, this.height)
+    this.renders()
   }
   /**
    * @description 渲染

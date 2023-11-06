@@ -123,12 +123,6 @@ export default new Router({
           name: 'buildTable',
           component: resolve => require(['@/views/elementUI/elTable/bulidTable'], resolve),
           meta: { title: 'buildTable', icon: 'build', noCache: true}
-        },
-        {
-          path: '/treeTableBySortablejs',
-          name: 'treeTableBySortablejs',
-          component: resolve => require(['@/views/elementUI/elTable/treeTableBySortablejs'], resolve),
-          meta: { title: 'treeTableBySortablejs', icon: 'build', noCache: true}
         }
       ]
     },
@@ -201,6 +195,19 @@ export default new Router({
           component: resolve => require(['@/views/formRecovery/index'], resolve),
           name: 'formRecovery',
           meta: { title: '模拟表单垃圾回收', icon: 'input', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/treeSortable',
+      component: Layout,
+      redirect: "treeSortable",
+      children: [
+        {
+          path: 'treeSortable',
+          component: resolve => require(['@/views/sortablejsTablePage/index'], resolve),
+          name: 'treeSortable',
+          meta: { title: '树状拖拽', icon: 'tree-table', noCache: true}
         }
       ]
     },
