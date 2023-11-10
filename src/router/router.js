@@ -113,12 +113,6 @@ export default new Router({
           meta: { title: 'ELINPUT', icon: 'edit', noCache: true}
         },
         {
-          path: '/cascader',
-          name: 'cascader',
-          component: resolve => require(['@/views/elementUI/cascader'], resolve),
-          meta: { title: 'cascader', icon: 'edit', noCache: true}
-        },
-        {
           path: '/buildTable',
           name: 'buildTable',
           component: resolve => require(['@/views/elementUI/elTable/bulidTable'], resolve),
@@ -156,7 +150,7 @@ export default new Router({
       path: '/down',
       component: Layout,
       redirect: "down",
-      meta: { title: "ELEMENT", icon: "documentation", noCache: false },
+      meta: { title: "页面下载", icon: "upload", noCache: false },
       children: [
         {
           path: 'downword',
@@ -186,28 +180,28 @@ export default new Router({
       ]
     },
     {
-      path: '/formRecovery',
+      path: '/dropPage',
       component: Layout,
-      redirect: "formRecovery",
+      redirect: "dropPage",
+      meta: { title: "拖动及滚动", icon: "documentation", noCache: false },
       children: [
         {
-          path: 'formRecovery',
-          component: resolve => require(['@/views/formRecovery/index'], resolve),
-          name: 'formRecovery',
-          meta: { title: '模拟表单垃圾回收', icon: 'input', noCache: true}
-        }
-      ]
-    },
-    {
-      path: '/treeSortable',
-      component: Layout,
-      redirect: "treeSortable",
-      children: [
+          path: 'myDrop',
+          component: resolve => require(['@/views/myDrop/index'], resolve),
+          name: 'myDrop',
+          meta: { title: '原生拖拽', icon: 'clipboard', noCache: true}
+        }, 
         {
-          path: 'treeSortable',
-          component: resolve => require(['@/views/sortablejsTablePage/index'], resolve),
-          name: 'treeSortable',
-          meta: { title: '树状拖拽', icon: 'tree-table', noCache: true}
+          path: 'myGard',
+          component: resolve => require(['@/views/myDrop/gardH'], resolve),
+          name: 'myGard',
+          meta: { title: '横向虚拟滚动', icon: 'clipboard', noCache: true}
+        }, 
+        {
+          path: 'myGardz',
+          component: resolve => require(['@/views/myDrop/gardZ'], resolve),
+          name: 'myGardz',
+          meta: { title: '纵向虚拟滚动', icon: 'clipboard', noCache: true}
         }
       ]
     },

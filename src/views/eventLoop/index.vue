@@ -8,13 +8,6 @@
         <el-button @click="addLoop1(loopAdd3)">事件3</el-button>
       </div>
     </div>
-    <div class="loop_2">
-      第二种
-      <div id="loop_con_2" name="loop_con_2">
-        <el-button @click="addLoop2(loopAdd4, loop2_data_add1)">事件4</el-button>
-        <el-button @click="addLoop2(loopAdd5, loop2_data_add2)">事件5</el-button>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -29,10 +22,6 @@ export default {
       clickIndex: 1, // 记录第一种方式的点击次数
       eventimit: true, // 用于限制事件执行
       eventLoop: [], // 总队列
-      // 第二种
-      loop2_data: 1,
-      loop2_data_add1: 1,
-      loop2_data_add2: 2
     }
   },
   methods: {
@@ -89,18 +78,7 @@ export default {
           this.eventimit = true;
         }
       }
-    },
-
-    // 第二种 带参、fun：回调；data：任何参数，包括获取值的方法 start
-    addLoop2(fun, data) {
-      fun(data);
-    },
-    loopAdd4(num) {
-      console.log(num);
-    },
-    loopAdd5(num) {
-      console.log(num);
-    },
+    }
   }
 }
 </script>
