@@ -10,15 +10,28 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/css',
       component: Layout,
-      redirect: 'csspage',
+      redirect: 'css',
+      meta: { title: "CSS", icon: "color", noCache: false },
       children: [
         {
           path: 'csspage',
           component: resolve => require(['@/views/cssPage/index'], resolve),
           name: 'CSS示例',
           meta: { title: 'CSS示例', icon: 'dashboard', noCache: true, affix: true }
+        },
+        {
+          path: 'cssPageScroll',
+          component: resolve => require(['@/views/cssPage/cssPageScroll/index'], resolve),
+          name: '滚动样式',
+          meta: { title: '滚动样式', icon: 'eye-open', noCache: true, affix: true }
+        },
+        {
+          path: 'mouseSpider',
+          component: resolve => require(['@/views/cssPage/mouseSpider/index'], resolve),
+          name: '奔跑的蜘蛛',
+          meta: { title: '奔跑的蜘蛛', icon: 'bug', noCache: true, affix: true }
         }
       ]
     },
