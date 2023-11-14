@@ -86,7 +86,7 @@ export default {
     runWord() {
       this.timeObj.timeoutTemp = setTimeout(() => {
         this.changeWord();
-      }, 1000);
+      }, 700);
     },
     /**
      * 文字滚动，单行样式变化
