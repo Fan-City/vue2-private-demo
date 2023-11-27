@@ -51,6 +51,10 @@
         </el-table-column>
       </template>
     </el-table>
+
+    <div style="width: 200px;">
+      神里绫华护理费啦神里绫华护理费啦神里绫华护理费啦神里绫华护理费啦神里绫华护理费啦神里绫华护理费啦
+    </div>
   </div>
 </template>
 <script>

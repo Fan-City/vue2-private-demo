@@ -10,9 +10,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/css',
+      path: '/',
       component: Layout,
-      redirect: 'css',
+      redirect: 'csspage',
       meta: { title: "CSS", icon: "color", noCache: false },
       children: [
         {
@@ -118,6 +118,12 @@ export default new Router({
           name: 'formSelectPage',
           component: resolve => require(['@/views/elementUI/formSelectPage'], resolve),
           meta: { title: 'formSelectPage', icon: 'edit', noCache: true}
+        },
+        {
+          path: '/elForm',
+          name: 'elForm',
+          component: resolve => require(['@/views/elementUI/elForm'], resolve),
+          meta: { title: 'elForm', icon: 'edit', noCache: true}
         },
         {
           path: '/inputPage',
