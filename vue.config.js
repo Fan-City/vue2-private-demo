@@ -5,7 +5,7 @@ function resolve(dir) {
 
 module.exports = {
     publicPath: './', //部署应用时的根路径(默认'/'),也可用相对路径(存在使用限制)
-    outputDir: 'salesLeads', //运行时生成的生产环境构建文件的目录(默认'dist'，构建之前会被清除)
+    outputDir: 'dist', //运行时生成的生产环境构建文件的目录(默认'dist'，构建之前会被清除)
     lintOnSave: false, //是否开启ESlint（保存时检查）
     devServer: { 
         host: 'localhost',

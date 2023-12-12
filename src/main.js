@@ -28,6 +28,11 @@ Vue.prototype.msgError = function (msg) { this.$message({ showClose: true, messa
 Vue.prototype.msgWarning = function (msg) { this.$message({ showClose: true, message: msg, type: 'warning' }) }
 
 Vue.use(Element, {size:'medium'})
+
+import Update from "./Updater.js";
+const autoUpdate = new Update();
+autoUpdate.autRef();
+
 Vue.config.productionTip = false
 new Vue({
   router,

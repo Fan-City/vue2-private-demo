@@ -225,6 +225,19 @@ export default new Router({
       ]
     },
     {
+      path: '/arcgis',
+      component: Layout,
+      redirect: "arcgis",
+      children: [
+        {
+          path: 'arcgis',
+          component: resolve => require(['@/views/arcgismap/index'], resolve),
+          name: 'arcgis',
+          meta: { title: 'ditu', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
       path: '*',
       name: '404',
       component: noPage,
