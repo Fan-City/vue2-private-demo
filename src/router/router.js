@@ -238,6 +238,26 @@ export default new Router({
       ]
     },
     {
+      path: '/compare',
+      component: Layout,
+      redirect: "compare",
+      meta: { title: "对比", icon: "upload", noCache: false },
+      children: [
+        {
+          path: 'editerCompare',
+          component: resolve => require(['@/views/editerCompare/index'], resolve),
+          name: 'editerCompare',
+          meta: { title: '富文本对比', icon: 'icon', noCache: true}
+        },
+        {
+          path: 'textCompare',
+          component: resolve => require(['@/views/editerCompare/textCompare'], resolve),
+          name: 'textCompare',
+          meta: { title: '文本对比', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
       path: '*',
       name: '404',
       component: noPage,

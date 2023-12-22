@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@tweenjs/tween.js": "^20.0.3",
+    "@wangeditor/editor-for-vue": "^1.0.2",
+    "compression-webpack-plugin": "^6.1.1",
     "core-js": "^2.6.12",
+    "diff-match-patch": "^1.0.5",
     "docx-preview": "^0.1.20",
     "docxtemplater": "^3.40.1",
     "docxtemplater-image-module-free": "^1.1.1",
@@ -18,7 +21,9 @@
     "element-ui": "2.15.0",
     "esri-loader": "^3.7.0",
     "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
     "js-cookie": "^3.0.5",
+    "jspdf": "^2.5.1",
     "jszip-utils": "^0.1.0",
     "pizzip": "^3.1.4",
     "sortablejs": "^1.15.0",
@@ -26,6 +31,8 @@
     "three-obj-mtl-loader": "1.0.3",
     "tween.js": "16.6.0",
     "vue": "^2.6.10",
+    "vue-code-diff": "^1.2.0",
+    "vue-codemirror": "^4.0.6",
     "vue-drag-tree-table": "^1.0.4",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.3",
@@ -44,7 +51,8 @@
     "prettier": "^1.18.2",
     "sass-loader": "^7.3.1",
     "svg-sprite-loader": "5.1.1",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
   "eslintConfig": {
     "root": false,
