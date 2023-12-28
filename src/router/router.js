@@ -178,6 +178,12 @@ export default new Router({
           meta: { title: '下载WORD', icon: 'documentation', noCache: true}
         }, 
         {
+          path: 'downword1',
+          component: resolve => require(['@/views/downWord/index1'], resolve),
+          name: 'downword1',
+          meta: { title: '下载WORD1', icon: 'documentation', noCache: true}
+        }, 
+        {
           path: 'downloadEditer',
           component: resolve => require(['@/views/downWord/downloadEditer'], resolve),
           name: 'downloadEditer',

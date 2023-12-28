@@ -1,7 +1,6 @@
 <template>
   <div class="downword-page" id="pdfContainer">
-    <div class="download" @click="todown">下载</div>
-    <div class="download1" @click="downLoadPdf">下载pdf</div>
+    <div class="download" @click="downLoadPdf">下载pdf</div>
     <div class="title title-1">{{ text1 }}</div>
     <div class="title title-1">{{ text1 }}</div>
     <div class="title title-1">{{ text1 }}</div>
@@ -17,19 +16,31 @@
     <div class="title title-1">{{ text1 }}</div>
     <div class="title title-1">{{ text1 }}</div>
     <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-2">{{ text2 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-2">{{ text2 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <div class="title title-2">{{ text2 }}</div>
+    <div class="title title-1">{{ text1 }}</div>
+    <img src="https://img0.baidu.com/it/u=3232582821,3516640051&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1703350800&t=3ef9d06db70dfce7ba7535bb6182bf09" alt="">
+
     <div ref="myEcharts" id="myEcharts" class="downword-page-myEcharts itemClass"></div>
   </div>
 </template>
 
 <script>
-import PdfLoader from "./htmlToPdfNew.js";
-
-// import data from "./data.json";
 import echarts from "echarts";
-import JSZipUtils from "jszip-utils";
-import docxtemplater from "docxtemplater";
-import { saveAs } from "file-saver";
-import PizZip from "pizzip";
+import PdfLoader from "./htmlToPdfNew.js";
 
 export default {
   name: "downwords",
@@ -37,7 +48,6 @@ export default {
     return {
       text1: "测试关系图标题1",
       text2: "测试关系图标题2",
-      // echartData: data,
       myEcharts1: null,
       myEcharts2: null,
     };
@@ -733,97 +743,6 @@ export default {
       };
       this.myEcharts.setOption(option);
     },
-    // 下载word
-    todown() {
-      let _this = this;
-      // 同名 ref 取多个，可以为后续 多图标取所有做准备， 其他不同名也行，方法稍微改动，根据实际需求情况吧
-      let imgUrl = this.myEcharts.getDataURL({
-        pixelRatio: 2,
-        backgroundColor: "#fff",
-      });
-
-      // word图片处理myEcharts
-      let ImageModule = require("docxtemplater-image-module-free");
-
-      // 读取并获得模板文件的二进制内容
-      JSZipUtils.getBinaryContent("/down2.docx", function (error, content) {
-        if (error) {
-          throw error;
-        }
-        // 图片属性处理
-        let opts = {};
-        opts.centered = true; // 图片居中，在word模板中定义方式为{%image}
-        opts.fileType = "docx";
-        opts.getImage = function (chartId) {
-          return _this.base64DataURLToArrayBuffer(chartId);
-        };
-        opts.getSize = function () {
-          return [500, 220];
-        };
-        // 创建图片模板
-        let imageModule = new ImageModule(opts);
-
-        let zip = new PizZip(content);
-        let doc = new docxtemplater();
-        doc.attachModule(imageModule);
-        doc.loadZip(zip);
-        // 设置模板变量的值
-        doc.setData({
-          title1: _this.text1,
-          title2: _this.text2,
-          imgUrl: imgUrl,
-          textList: [
-            { item: "123", name: "测试1" },
-            { item: "456", name: "测试2" },
-          ],
-        });
-
-        try {
-          // 用模板变量的值替换所有模板变量
-          doc.render();
-        } catch (error) {
-          // 抛出异常
-          let e = {
-            message: error.message,
-            name: error.name,
-            stack: error.stack,
-            properties: error.properties,
-          };
-          _this.loading = false;
-          throw error;
-        }
-        // 生成一个代表docxtemplater对象的zip文件（不是一个真实的文件，而是在内存中的表示）
-        let out = doc.getZip().generate({
-          type: "blob",
-          mimeType:
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        });
-        // 将目标文件对象保存为目标类型的文件，并命名
-        saveAs(out, "测试导出" + new Date().getTime() + ".docx");
-        _this.loading = false;
-      });
-    },
-    // echart图片处理
-    base64DataURLToArrayBuffer(dataURL) {
-      const base64Regex = /^data:image\/(png|jpg|svg|svg\+xml);base64,/;
-      if (!base64Regex.test(dataURL)) {
-        return false;
-      }
-      const stringBase64 = dataURL.replace(base64Regex, "");
-      let binaryString;
-      if (typeof window !== "undefined") {
-        binaryString = window.atob(stringBase64);
-      } else {
-        binaryString = new Buffer(stringBase64, "base64").toString("binary");
-      }
-      const len = binaryString.length;
-      const bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) {
-        const ascii = binaryString.charCodeAt(i);
-        bytes[i] = ascii;
-      }
-      return bytes.buffer;
-    },
   },
 };
 </script>
@@ -835,25 +754,6 @@ export default {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 100px;
-    line-height: 35px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    color: blue;
-    cursor: pointer;
-    border: 1px solid blue;
-    border-radius: 5px;
-    transition: 0.3s;
-    &:hover {
-      color: white;
-      background: blue;
-    }
-  }
-  .download1 {
-    position: absolute;
-    top: 20px;
-    left: 150px;
     width: 100px;
     line-height: 35px;
     font-size: 14px;
