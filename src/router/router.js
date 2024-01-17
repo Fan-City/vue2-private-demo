@@ -136,6 +136,12 @@ export default new Router({
           name: 'buildTable',
           component: resolve => require(['@/views/elementUI/elTable/bulidTable'], resolve),
           meta: { title: 'buildTable', icon: 'build', noCache: true}
+        },
+        {
+          path: '/selectIncludes',
+          name: 'selectIncludes',
+          component: resolve => require(['@/views/elementUI/selectIncludes'], resolve),
+          meta: { title: 'selectIncludes', icon: 'edit', noCache: true}
         }
       ]
     },
@@ -260,6 +266,12 @@ export default new Router({
           component: resolve => require(['@/views/editerCompare/textCompare'], resolve),
           name: 'textCompare',
           meta: { title: '文本对比', icon: 'icon', noCache: true}
+        },
+        {
+          path: 'diffCompare',
+          component: resolve => require(['@/views/editerCompare/diff'], resolve),
+          name: 'diffCompare',
+          meta: { title: 'diff对比', icon: 'icon', noCache: true}
         }
       ]
     },
