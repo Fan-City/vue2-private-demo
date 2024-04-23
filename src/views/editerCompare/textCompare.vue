@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>{{ diffDescription }}</div>
     <div ref="contrastDiv"></div>
   </div>
 </template>
@@ -23,7 +22,6 @@ export default {
     return {
       leftText: "", //左侧展示文本
       rightText: "", //右侧展示文本
-      diffDescription: "", //差异内容描述
     };
   },
   mounted() {
@@ -69,32 +67,32 @@ export default {
           originLeft: null,
           orig: this.rightText,
           lineNumbers: true,
-          mode: "text/html",
+          mode: "xml",
           hightlightDifference: true,
           connect: "align",
-          readOnly: true,
+          readOnly: false,
           theme: "dracula",
           smartIndent: true,
         });
-        let diffCount = difference.right.chunks.length;
-        console.log(diffCount);
-        let description = "";
-        if (diffCount === 0) {
-          description = "左右文本内容一致";
-        } else if (diffCount === 1) {
-          description =
-            "共1处差异，差异的开始行号为：" +
-            (difference.right.chunks[0].origFrom + 1);
-        } else {
-          description = "共" + diffCount + "处差异，每处差异的开始行号为：";
-          for (let i = 0; i < diffCount; i++) {
-            description += difference.right.chunks[i].origFrom + 1;
-            if (i !== diffCount - 1) {
-              description += "、";
-            }
-          }
-        }
-        this.diffDescription = description;
+        // let diffCount = difference.right.chunks.length;
+        // console.log(diffCount);
+        // let description = "";
+        // if (diffCount === 0) {
+        //   description = "左右文本内容一致";
+        // } else if (diffCount === 1) {
+        //   description =
+        //     "共1处差异，差异的开始行号为：" +
+        //     (difference.right.chunks[0].origFrom + 1);
+        // } else {
+        //   description = "共" + diffCount + "处差异，每处差异的开始行号为：";
+        //   for (let i = 0; i < diffCount; i++) {
+        //     description += difference.right.chunks[i].origFrom + 1;
+        //     if (i !== diffCount - 1) {
+        //       description += "、";
+        //     }
+        //   }
+        // }
+        // this.diffDescription = description;
       });
     },
   },

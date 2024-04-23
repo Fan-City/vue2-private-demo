@@ -276,6 +276,32 @@ export default new Router({
       ]
     },
     {
+      path: '/monacoF',
+      component: Layout,
+      redirect: "monacoF",
+      children: [
+        {
+          path: 'monacoF',
+          component: resolve => require(['@/views/monaco/monacoF'], resolve),
+          name: 'monacoF',
+          meta: { title: 'ditu', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/eltree',
+      component: Layout,
+      redirect: "eltree",
+      children: [
+        {
+          path: 'eltree',
+          component: resolve => require(['@/views/eltree/index'], resolve),
+          name: 'eltree',
+          meta: { title: 'eltree', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
       path: '*',
       name: '404',
       component: noPage,
