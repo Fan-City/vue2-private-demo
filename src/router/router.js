@@ -302,6 +302,32 @@ export default new Router({
       ]
     },
     {
+      path: '/myBug',
+      component: Layout,
+      redirect: "myBug",
+      children: [
+        {
+          path: 'myBug',
+          component: resolve => require(['@/views/elementUI/myBug'], resolve),
+          name: 'myBug',
+          meta: { title: 'bug', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/aite',
+      component: Layout,
+      redirect: "aite",
+      children: [
+        {
+          path: 'aite',
+          component: resolve => require(['@/views/aite/index'], resolve),
+          name: 'aite',
+          meta: { title: '艾特', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
       path: '*',
       name: '404',
       component: noPage,

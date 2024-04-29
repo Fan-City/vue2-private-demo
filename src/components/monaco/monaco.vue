@@ -118,6 +118,7 @@ export default {
         value: this.value,
         theme: "vs-dark",
         autoIndex: true,
+        wordWrap: 'on',
         ...this.opts,
       });
       // 监听编辑器content变化事件
