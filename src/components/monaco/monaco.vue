@@ -26,17 +26,17 @@ export default {
     },
   },
   watch: {
-    value: {
-      handler(n) {
-        if (this.showInit) {
-          //初次传值初始化一次
-          this.init();
-          this.showInit = false;
-        }
-        this.monacoInstance.setValue(n); //剩余全部更新内容
-      },
-      deep: true,
-    },
+    // value: {
+    //   handler(n) {
+    //     if (this.showInit) {
+    //       //初次传值初始化一次
+    //       this.init();
+    //       this.showInit = false;
+    //     }
+    //     this.monacoInstance.setValue(n); //剩余全部更新内容
+    //   },
+    //   deep: true,
+    // },
   },
   data() {
     return {
@@ -121,9 +121,10 @@ export default {
         wordWrap: 'on',
         ...this.opts,
       });
+
       // 监听编辑器content变化事件
       this.monacoInstance.onDidChangeModelContent(() => {
-        this.$emit("input", this.monacoInstance.getValue());
+        this.$emit("contentChange", this.monacoInstance.getValue());
       });
     },
   },

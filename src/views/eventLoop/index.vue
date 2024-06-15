@@ -3,9 +3,9 @@
     <div class="loop_1">
       第一种
       <div id="loop_con_1" name="loop_con_1">
-        <el-button @click="addLoop1(loopAdd1)">事件1</el-button>
-        <el-button @click="addLoop1(loopAdd2)">事件2</el-button>
-        <el-button @click="addLoop1(loopAdd3)">事件3</el-button>
+        <el-button @click="addLoop(loopAdd1)">事件1</el-button>
+        <el-button @click="addLoop(loopAdd2)">事件2</el-button>
+        <el-button @click="addLoop(loopAdd3)">事件3</el-button>
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     // 第一种 start
-    addLoop1(fun) {
+    addLoop(fun) {
       // 最大为10， 因为 第一次会立即取出并执行，所以 设置小于 9； 且在点击过程中，事件执结束也会立即取出并执行下一次事件。所以只能限制大概范围。
       if (this.eventLoop.length < 9) {
         this.eventLoop.push(fun);
@@ -42,7 +42,7 @@ export default {
         setTimeout(() => {
           this.loop1_data += this.loop1_data_add1;
           resole([this.loop1_data, this.loop1_data_add1]);
-        }, 8000);
+        }, 1000);
       })
     },
     loopAdd2() {
@@ -50,7 +50,7 @@ export default {
         setTimeout(() => {
           this.loop1_data += this.loop1_data_add2;
           resole([this.loop1_data, this.loop1_data_add2]);
-        }, 8000);
+        }, 1000);
       })
     },
     loopAdd3() {
@@ -58,7 +58,7 @@ export default {
         setTimeout(() => {
           this.loop1_data += this.loop1_data_add3;
           resole([this.loop1_data, this.loop1_data_add3]);
-        }, 8000);
+        }, 1000);
       })
     },
     doLoop_1() {

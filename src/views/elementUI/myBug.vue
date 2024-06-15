@@ -1,54 +1,28 @@
 <template>
-  <el-form :model="form" ref="form" label-width="80px">
-    <div
-      v-for="(item, index) in form.itemsaaaa"
-      :key="index"
-    >
-      <el-form-item
-        :label="'名字 ' + (index + 1)"
-        :prop="'itemsaaaa.' + index + '.value'"
-        :rules="[{ required: true, message: '必填', trigger: 'change' }]"
-      >
-        <el-input v-model="item.value"></el-input>
-      </el-form-item>
-    </div>
-    <el-button type="primary" @click="addItem">添加</el-button>
-    <el-button type="success" @click="submitForm">确定</el-button>
-  </el-form>
+  <div>
+    <el-date-picker
+      v-model="value"
+      type="daterange"
+      range-separator="至"
+      start-placeholder="开始日期"
+      end-placeholder="结束日期"
+      value-format="yyyy-MM-dd"
+      @change="change">
+    </el-date-picker>
+  </div>
 </template>
- 
+
 <script>
-export default {
-  data() {
-    return {
-      form: {
-        itemsaaaa: []
-      }
-    };
-  },
-  created() {
-    // form添加初始值
-    this.form.itemsaaaa = [
-      {
-        name: '123',
-      },
-      {
-        name: '123',
-      }
-    ]
-  },
-  methods: {
-    addItem() {
-      this.form.itemsaaaa.push({ value: ''});
+  export default {
+    data() {
+      return {
+        value: null,
+      };
     },
-    submitForm() {
-      console.log(this.form)
-      this.$refs.form.validate((valid) => {
-        if (valid) {
-          console.log('成功了')
-        }
-      });
+    methods: {
+      change() {
+        console.log(this.value)
+      }
     }
-  }
-};
+  };
 </script>
