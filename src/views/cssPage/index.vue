@@ -12,6 +12,9 @@
     <div v-silde-in class="content-item flex-container">
       <power />
     </div>
+    <div v-silde-in class="content-item flex-container">
+      <loading />
+    </div>
   </div>
 </template>
 
@@ -20,6 +23,7 @@ import heart from './pageItem/heart.vue'
 import springpage from './pageItem/springpage.vue'
 import snow from './pageItem/snow.vue'
 import power from './pageItem/power.vue'
+import loading from './pageItem/loading.vue'
 
 export default {
   name: 'csspage',
@@ -27,7 +31,8 @@ export default {
     heart,
     springpage,
     snow,
-    power
+    power,
+    loading
   }
 }
 </script>
@@ -53,15 +58,15 @@ export default {
     border-radius: 20px;
     overflow: hidden;
   }
-  // .content-item::before{
-  //   content: "";
-  //   position: absolute;
-  //   width: 120%;
-  //   height: 70%;
-  //   background:linear-gradient(#00ccff,#d500f9);
-  //   animation: rotate 4s linear infinite;
-  //   overflow: hidden;
-  // }
+  .content-item::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 70%;
+    background:linear-gradient(#00ccff,#d500f9);
+    animation: rotate 4s linear infinite;
+    overflow: hidden;
+  }
   @keyframes rotate {
     from{
       transform: rotate(Odeg);
