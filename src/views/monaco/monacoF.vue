@@ -17,7 +17,7 @@ export default {
       opts: {
         value: '',
         readOnly: false, // 是否可编辑
-        language: 'xml', // 语言类型
+        language: 'yaml', // 语言类型
         theme: 'vs-dark', // 编辑器主题
       },
     }

@@ -284,7 +284,7 @@ export default new Router({
           path: 'monacoF',
           component: resolve => require(['@/views/monaco/monacoF'], resolve),
           name: 'monacoF',
-          meta: { title: 'ditu', icon: 'icon', noCache: true}
+          meta: { title: 'monacoF', icon: 'icon', noCache: true}
         }
       ]
     },

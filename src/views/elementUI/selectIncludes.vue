@@ -27,6 +27,10 @@
         获取
       </el-button>
     </el-form-item> -->
+
+    <el-input-number
+      v-model="inputNum"
+    />
   </el-form>
 </template>
 
@@ -88,6 +92,7 @@ export default {
   },
   data() {
     return {
+      inputNum: '0.0',
       pForm: {
         pValue: null
       },
