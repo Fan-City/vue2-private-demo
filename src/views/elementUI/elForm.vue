@@ -1,7 +1,7 @@
 <template>
   <el-form ref="form" :model="form" label-width="80px" label-position="top">
     <el-form-item label="活动名称">
-      <el-input v-model="form.name"></el-input>
+      <el-input v-model="form.name" maxlength="20"></el-input>
     </el-form-item>
     <el-form-item label="活动区域" label-position="left">
       <el-select v-model="form.region" placeholder="请选择活动区域">
@@ -45,7 +45,7 @@
       </el-radio-group>
     </el-form-item>
     <el-form-item label="活动形式">
-      <el-input type="textarea" v-model="form.desc"></el-input>
+      <el-input type="textarea" v-model="form.desc" @change="aaaaa"></el-input>
     </el-form-item>
     <el-form-item label="测试联级">
       <el-cascader v-model="form.cvalue" :options="coptions"> </el-cascader>
@@ -57,6 +57,7 @@
   </el-form>
 </template>
 <script>
+import jsPDF from 'jspdf';
 export default {
   data() {
     return {
@@ -308,6 +309,10 @@ export default {
     onSubmit() {
       console.log("submit!");
     },
+    aaaaa() {
+      console.log(this.form.desc)
+      this.form.desc = JSON.parse(JSON.stringify(this.form.desc))
+    }
   },
 };
 </script>

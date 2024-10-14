@@ -22,13 +22,13 @@ Promise.myAll = function(proms) {
   }
 
   if(i === 0) {
-    reo([]);
+    rej([]);
   }
 
   return p;
 }
 
-Promise.myAll([1, 2, 3]).then(res => {
+Promise.myAll([0, 2, 3]).then(res => {
   console.log(res, 'success');
 }, err => {
   console.log(err, 'err');

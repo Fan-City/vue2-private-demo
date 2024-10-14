@@ -1,6 +1,9 @@
 <template>
   <div>
     <div ref="contrastDiv"></div>
+    <el-button @click="con">
+      输出
+    </el-button>
   </div>
 </template>
 
@@ -24,6 +27,11 @@ export default {
       rightText: "", //右侧展示文本
     };
   },
+  watch: {
+    leftText(val) {
+      console.log(JSON.stringify(val))
+    }
+  },
   mounted() {
     this.prepareData();
     this.contrast();
@@ -31,7 +39,7 @@ export default {
   methods: {
     prepareData() {
       for (let i = 0; i < 10; i++) {
-        this.leftText += "a\n";
+        this.leftText += "a\r\n";
         this.rightText += "b\n";
       }
       for (let i = 0; i < 10; i++) {
@@ -95,6 +103,9 @@ export default {
         // this.diffDescription = description;
       });
     },
+    con() {
+      console.log(JSON.stringify(this.leftText))
+    }
   },
 };
 </script>

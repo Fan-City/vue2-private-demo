@@ -143,6 +143,13 @@ export default new Router({
           component: resolve => require(['@/views/elementUI/selectIncludes'], resolve),
           meta: { title: 'selectIncludes', icon: 'edit', noCache: true}
         }
+        ,
+        {
+          path: '/text',
+          name: 'text',
+          component: resolve => require(['@/views/elementUI/text'], resolve),
+          meta: { title: '输出测试', icon: 'edit', noCache: true}
+        }
       ]
     },
     {
@@ -324,6 +331,32 @@ export default new Router({
           component: resolve => require(['@/views/aite/index'], resolve),
           name: 'aite',
           meta: { title: '艾特', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/eye',
+      component: Layout,
+      redirect: "aite",
+      children: [
+        {
+          path: 'eye',
+          component: resolve => require(['@/views/cssPage/test.vue'], resolve),
+          name: 'eye',
+          meta: { title: 'eye', icon: 'icon', noCache: true}
+        }
+      ]
+    },
+    {
+      path: '/timeLine',
+      component: Layout,
+      redirect: "timeLine",
+      children: [
+        {
+          path: 'timeLine',
+          component: resolve => require(['@/views/timeLine/index.vue'], resolve),
+          name: 'timeLine',
+          meta: { title: 'timeLine', icon: 'slider', noCache: true}
         }
       ]
     },

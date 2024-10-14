@@ -15,7 +15,7 @@ export default {
       type: Object,
       default() {
         return {
-          language: "java", // shell、sql、python
+          language: "JavaScript", // shell、sql、python
           readOnly: false, // 不能编辑
         };
       },

@@ -12,10 +12,10 @@ export default {
   },
   data() {
     return {
-      value: '/n',
+      value: '123',
       countent: '',
       opts: {
-        value: '',
+        value: '123',
         readOnly: false, // 是否可编辑
         language: 'yaml', // 语言类型
         theme: 'vs-dark', // 编辑器主题
@@ -26,7 +26,7 @@ export default {
     contentChange(val) {
       //每次改变编辑器内容触发事件，先用一个值存放数据
       this.countent = val
-      console.log(val, JSON.stringify(val))
+      console.log(JSON.stringify(val))
     },
     submit() {
       //在你提交给后台时将this.countent赋值给value
