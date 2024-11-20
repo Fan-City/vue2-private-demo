@@ -361,6 +361,19 @@ export default new Router({
       ]
     },
     {
+      path: '/shuangse',
+      component: Layout,
+      redirect: "shuangse",
+      children: [
+        {
+          path: 'shuangse',
+          component: resolve => require(['@/views/shuangse/index.vue'], resolve),
+          name: 'shuangse',
+          meta: { title: 'shuangse', icon: 'slider', noCache: true}
+        }
+      ]
+    },
+    {
       path: '*',
       name: '404',
       component: noPage,
